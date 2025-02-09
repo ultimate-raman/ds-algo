@@ -102,3 +102,51 @@ public:
         return nums;
     }
 };
+
+
+
+
+
+//quick sort
+class Solution {
+public:
+
+    int quickSortHelper(vector<int>& nums, int low, int high) {
+        int i = low;
+        int j = high;
+        
+        while(i<j) {
+            while(nums[i] <= nums[low] && i < high) {
+                i++;
+            }
+
+            while(nums[j] >= nums[low] && j > low) {
+                j--;
+            }
+
+            if(i<j) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
+        }
+
+        int temp = nums[low];
+        nums[low] = nums[j];
+        nums[j] = temp;
+
+        return j;
+    }
+
+    void quickSort(vector<int>& nums, int low, int high) {
+        if(low >= high) return;
+        int pivotIndex = quickSortHelper(nums, low, high);
+        quickSort(nums, low, pivotIndex-1);
+        quickSort(nums, pivotIndex+1, high);
+    }
+
+    vector<int> sortArray(vector<int>& nums) {
+        quickSort(nums, 0, nums.size()-1);
+        return nums;
+    }
+};
