@@ -8,7 +8,7 @@ public class ImplementTrie {
 
     private final TrieNode root = new TrieNode();
 
-    public Trie() {
+    public void Trie() {
         //do nothing
     }
     
