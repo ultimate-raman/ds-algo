@@ -1,4 +1,4 @@
-package TwoPointers;
+package Pointers;
 import java.util.*;
 
 public class _3Sum {
