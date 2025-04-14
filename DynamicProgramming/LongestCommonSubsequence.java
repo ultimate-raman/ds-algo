@@ -24,7 +24,7 @@ public class LongestCommonSubsequence {
     //top down
     class Solution {
         public int longestCommonSubsequence(String text1, String text2) {
-            Integer[][] dp =  new Integer[text1.length()][text2.length()];
+            Integer[][] dp = new Integer[text1.length()][text2.length()];
             return dynamic(text1,text2,0,0,dp);
         }
     
