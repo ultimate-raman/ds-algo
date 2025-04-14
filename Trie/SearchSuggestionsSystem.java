@@ -7,7 +7,6 @@ import java.util.List;
 public class SearchSuggestionsSystem {
     private class TrieNode {
         TrieNode[] trieArray = new TrieNode[26];
-        boolean isEnd = false;
         List<String> mapping = new ArrayList<>();
     }
 
@@ -23,7 +22,6 @@ public class SearchSuggestionsSystem {
 
             if(node.mapping.size() < 3) node.mapping.add(word);
         }
-        node.isEnd = true;
     }
 
     public List<List<String>> searchSuggestions(String searchWord) {
@@ -50,7 +48,6 @@ public class SearchSuggestionsSystem {
     
 
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
-        TrieNode trie = new TrieNode();
 
         Arrays.sort(products);
 
