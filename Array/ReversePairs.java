@@ -1,8 +1,7 @@
 package Array;
 
-//Striver
-public class CountInversions {
-    private long ans = 0;
+class ReversePairs {
+    private int ans = 0;
 
     private void mergeSort(int[] nums, int start, int end) {
         if(start>=end) return;
@@ -14,12 +13,10 @@ public class CountInversions {
     }
 
     private void merge(int[] nums, int start, int mid, int end) {
-
-        int i = start;
         int j = mid+1;
 
         for(int i = start; i<=mid; i++){
-            while(j<=end && nums[i] > 2*nums[j]) {
+            while(j<=end && (long)nums[i] > (long)2*nums[j]) {
                 j++;
             }
             ans+=j-(mid+1);
@@ -55,7 +52,7 @@ public class CountInversions {
     }
 
 
-    public long numberOfInversions(int[] nums) {
+    public int reversePairs(int[] nums) {
         mergeSort(nums,0,nums.length-1);
         return ans;
     }
