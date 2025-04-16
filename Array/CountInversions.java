@@ -15,7 +15,6 @@ public class CountInversions {
 
     private void merge(int[] nums, int start, int mid, int end) {
 
-        int i = start;
         int j = mid+1;
 
         for(int i = start; i<=mid; i++){
